@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="xAPI">
+    <output-path>$PROJECT_DIR$/out/artifacts/xAPI</output-path>
+    <root id="archive" name="xAPI.jar">
+      <element id="module-output" name="xJAPI" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../javaLibaries/HikariCP-4.0.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
