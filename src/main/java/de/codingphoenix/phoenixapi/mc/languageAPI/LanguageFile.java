@@ -1,4 +1,4 @@
-package de.xjanx05.xjavaapi.mc.languageAPI;
+package de.codingphoenix.phoenixapi.mc.languageAPI;
 
 import com.google.common.io.ByteStreams;
 import org.bukkit.Bukkit;

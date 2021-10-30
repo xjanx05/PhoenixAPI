@@ -1,4 +1,4 @@
-package de.xjanx05.xjavaapi.mc.languageAPI;
+package de.codingphoenix.phoenixapi.mc.languageAPI;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

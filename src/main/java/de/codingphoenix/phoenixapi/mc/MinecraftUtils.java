@@ -1,4 +1,4 @@
-package de.xjanx05.xjavaapi.mc;
+package de.codingphoenix.phoenixapi.mc;
 
 import java.util.UUID;
 

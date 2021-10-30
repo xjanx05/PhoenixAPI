@@ -1,4 +1,4 @@
-package de.xjanx05.xjavaapi.mc.languageAPI;
+package de.codingphoenix.phoenixapi.mc.languageAPI;
 
 public enum Language {
     GERMAN("de_DE"),

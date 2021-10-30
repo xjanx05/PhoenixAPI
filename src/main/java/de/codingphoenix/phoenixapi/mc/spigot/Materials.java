@@ -1,4 +1,4 @@
-package de.xjanx05.xjavaapi.mc.spigot;
+package de.codingphoenix.phoenixapi.mc.spigot;
 
 import java.util.Arrays;
 import java.util.HashMap;

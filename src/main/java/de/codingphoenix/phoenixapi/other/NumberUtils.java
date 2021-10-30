@@ -1,4 +1,4 @@
-package de.xjanx05.xjavaapi.other;
+package de.codingphoenix.phoenixapi.other;
 
 public class NumberUtils {
     public static String formatTimeInteger(int duration) {

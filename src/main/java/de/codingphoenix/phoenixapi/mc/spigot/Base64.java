@@ -1,4 +1,4 @@
-package de.xjanx05.xjavaapi.mc.spigot;
+package de.codingphoenix.phoenixapi.mc.spigot;
 
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.io.BukkitObjectInputStream;
