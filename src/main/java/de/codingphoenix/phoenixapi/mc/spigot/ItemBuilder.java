@@ -23,11 +23,21 @@ public class ItemBuilder {
     private Material material;
     private Color armorColor;
 
+    private boolean unbreakable;
+
     public ItemBuilder() {
     }
 
     public ItemBuilder amount(int amount) {
         this.amount = amount;
+        return this;
+    }
+
+    /*
+    Only for 1.16
+     */
+    public ItemBuilder unbreakable(boolean unbreakable) {
+        this.unbreakable = unbreakable;
         return this;
     }
 
@@ -37,6 +47,11 @@ public class ItemBuilder {
         if (this.displayName != null && stack.getType() != Material.AIR) {
             stackMeta.setDisplayName(this.displayName);
         }
+        try {
+            stackMeta.setUnbreakable(unbreakable);
+        } catch (Exception e) {
+        }
+
 
         if (this.enchantments != null) {
             Iterator var3 = this.enchantments.keySet().iterator();
@@ -65,6 +80,10 @@ public class ItemBuilder {
         ItemStack stack = this.pre != null ? this.pre : new ItemStack(this.material);
         if (stack.getItemMeta() instanceof LeatherArmorMeta) {
             LeatherArmorMeta stackMeta = (LeatherArmorMeta) stack.getItemMeta();
+            try {
+                stackMeta.setUnbreakable(unbreakable);
+            } catch (Exception e) {
+            }
             if (this.displayName != null && stack.getType() != Material.AIR) {
                 stackMeta.setDisplayName(this.displayName);
             }
