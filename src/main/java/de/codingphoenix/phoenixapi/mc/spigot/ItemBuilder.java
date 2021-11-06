@@ -5,6 +5,7 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
@@ -22,6 +23,7 @@ public class ItemBuilder {
     private ItemStack pre;
     private Material material;
     private Color armorColor;
+    private Set<ItemFlag> flags = new HashSet<>();
 
     private boolean unbreakable;
 
@@ -41,6 +43,11 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder itemFlags(ItemFlag... item) {
+        flags.addAll(Arrays.asList(item));
+        return this;
+    }
+
     public ItemStack build() {
         ItemStack stack = this.pre != null ? this.pre : new ItemStack(this.material);
         ItemMeta stackMeta = stack.getItemMeta();
@@ -51,8 +58,11 @@ public class ItemBuilder {
             stackMeta.setUnbreakable(unbreakable);
         } catch (Exception e) {
         }
-
-
+        if (!flags.isEmpty()) {
+            for (ItemFlag flag : flags) {
+                stackMeta.addItemFlags(flag);
+            }
+        }
         if (this.enchantments != null) {
             Iterator var3 = this.enchantments.keySet().iterator();
 
@@ -87,6 +97,11 @@ public class ItemBuilder {
             if (this.displayName != null && stack.getType() != Material.AIR) {
                 stackMeta.setDisplayName(this.displayName);
             }
+            if (!flags.isEmpty()) {
+                for (ItemFlag flag : flags) {
+                    stackMeta.addItemFlags(flag);
+                }
+            }
             if (armorColor != null) {
                 stackMeta.setColor(armorColor);
             }
@@ -120,7 +135,11 @@ public class ItemBuilder {
         if (this.lore != null) {
             skullMeta.setLore(this.lore);
         }
-
+        if (!flags.isEmpty()) {
+            for (ItemFlag flag : flags) {
+                skullMeta.addItemFlags(flag);
+            }
+        }
         stack.setItemMeta(skullMeta);
         stack.setAmount(this.amount);
         return stack;

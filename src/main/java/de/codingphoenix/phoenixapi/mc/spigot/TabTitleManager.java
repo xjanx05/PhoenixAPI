@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
-public class TablistManager {
+public class TabTitleManager {
     public static void setTablistToAll(String header, String footer){
         for(Player current : Bukkit.getOnlinePlayers()){
             setTablist(current, header, footer);
