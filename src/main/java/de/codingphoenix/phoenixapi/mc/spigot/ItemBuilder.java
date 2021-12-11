@@ -56,7 +56,7 @@ public class ItemBuilder {
         }
         try {
             stackMeta.setUnbreakable(unbreakable);
-        } catch (Exception e) {
+        } catch (NoSuchMethodError e) {
         }
         if (!flags.isEmpty()) {
             for (ItemFlag flag : flags) {
