@@ -92,7 +92,7 @@ public class ItemBuilder {
             LeatherArmorMeta stackMeta = (LeatherArmorMeta) stack.getItemMeta();
             try {
                 stackMeta.setUnbreakable(unbreakable);
-            } catch (Exception e) {
+            } catch (NoSuchMethodError e) {
             }
             if (this.displayName != null && stack.getType() != Material.AIR) {
                 stackMeta.setDisplayName(this.displayName);
