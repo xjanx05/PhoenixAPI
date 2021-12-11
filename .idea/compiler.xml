@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="xAPI" />
-        <module name="phoenixAPI" />
         <module name="PhoenixAPI" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="phoenixAPI" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
