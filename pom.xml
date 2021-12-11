@@ -32,8 +32,6 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
                     <finalName>PhoenixAPI/PhoenixAPI</finalName>
                 </configuration>
                 <dependencies>
