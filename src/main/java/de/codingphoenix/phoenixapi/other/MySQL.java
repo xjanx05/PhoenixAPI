@@ -26,7 +26,7 @@ public class MySQL {
         this.hikariConfig = new HikariConfig();
 
         this.connect();
-        //this.query("CREATE TABLE IF NOT EXISTS PunishmentData(`punished` varchar(64), `punisher` varchar(64), `start` varchar(100), `end` varchar(100), `points` int, `comment` varchar(64), id varchar(64), reason varchar(64), type varchar(64))");
+        //this.query("CREATE TABLE IF NOT EXISTS tablename(`name` varchar(64), `name2` varchar(64)");
     }
 
     public void connect() {

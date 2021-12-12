@@ -17,3 +17,4 @@ public class RamManager {
         return Runtime.getRuntime().totalMemory();
     }
 }
+

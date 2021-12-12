@@ -24,6 +24,7 @@ public class FileDownloader {
         conn.setInstanceFollowRedirects(true);
         HttpURLConnection.setFollowRedirects(true);
 
+
         boolean redirect = false;
         int status = conn.getResponseCode();
         if (status != HttpURLConnection.HTTP_OK) {

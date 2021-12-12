@@ -30,6 +30,7 @@ public class Base64 {
         }
     }
 
+
     public static ItemStack itemStackFromBase64(String data) throws IOException {
         try {
             ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(data));

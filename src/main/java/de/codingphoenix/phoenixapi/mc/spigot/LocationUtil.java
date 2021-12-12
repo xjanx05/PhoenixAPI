@@ -23,6 +23,7 @@ public class LocationUtil {
         return locs;
     }
 
+
     public static ArrayList<Location> generateLocationsVertical(Location middle, double radius, int amount, boolean stayX) {
         double alpha = (2 * Math.PI) / amount;
         ArrayList<Location> locs = new ArrayList<>();

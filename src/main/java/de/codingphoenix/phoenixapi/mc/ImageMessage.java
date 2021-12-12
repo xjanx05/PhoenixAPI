@@ -1,19 +1,20 @@
 package de.codingphoenix.phoenixapi.mc;
 
-import java.awt.Color;
+import net.md_5.bungee.api.ChatColor;
+
+import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-import net.md_5.bungee.api.ChatColor;
 
 public class ImageMessage {
-    private final Color[] colors = { new Color(0, 0, 0), new Color(0, 0, 170), new Color(0, 170, 0),
+    private final Color[] colors = {new Color(0, 0, 0), new Color(0, 0, 170), new Color(0, 170, 0),
             new Color(0, 170, 170), new Color(170, 0, 0), new Color(170, 0, 170), new Color(255, 170, 0),
             new Color(170, 170, 170), new Color(85, 85, 85), new Color(85, 85, 255), new Color(85, 255, 85),
             new Color(85, 255, 255), new Color(255, 85, 85), new Color(255, 85, 255), new Color(255, 255, 85),
-            new Color(255, 255, 255) };
+            new Color(255, 255, 255)};
 
-    private String[] lines;
+    private final String[] lines;
 
     public ImageMessage(BufferedImage image, int height, char imgChar) {
         ChatColor[][] chatColors = toChatColorArray(image, height);
@@ -34,7 +35,7 @@ public class ImageMessage {
 
                 int tmp16_15 = y;
                 String[] tmp16_12 = this.lines;
-                tmp16_12[tmp16_15] = String.valueOf(tmp16_12[tmp16_15]) + " " + text[y];
+                tmp16_12[tmp16_15] = tmp16_12[tmp16_15] + " " + text[y];
             }
         }
         return this;
@@ -68,10 +69,10 @@ public class ImageMessage {
             for (int x = 0; x < colors.length; x++) {
 
                 ChatColor color = colors[x][y];
-                line = String.valueOf(line) + ((color != null) ? (String.valueOf(colors[x][y].toString()) + imgchar)
+                line = line + ((color != null) ? (String.valueOf(colors[x][y].toString()) + imgchar)
                         : Character.valueOf(' '));
             }
-            lines[y] = String.valueOf(line) + ChatColor.RESET;
+            lines[y] = line + ChatColor.RESET;
         }
         return lines;
     }

@@ -1,10 +1,6 @@
 package de.codingphoenix.phoenixapi.other;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -33,7 +29,7 @@ public class FileZipper {
         boolean var6 = false;
 
         int read;
-        while((read = zipIn.read(bytesIn)) != -1) {
+        while ((read = zipIn.read(bytesIn)) != -1) {
             bos.write(bytesIn, 0, read);
         }
 
@@ -60,7 +56,7 @@ public class FileZipper {
         File[] var4 = file.listFiles();
         int var5 = var4.length;
 
-        for(int var6 = 0; var6 < var5; ++var6) {
+        for (int var6 = 0; var6 < var5; ++var6) {
             File toZip = var4[var6];
             if (toZip.isFile()) {
                 this.zipFile(toZip, outputStream, root);
@@ -92,8 +88,8 @@ public class FileZipper {
             ZipOutputStream outputStream = new ZipOutputStream(fileoutputStream = new FileOutputStream(zipFileName));
             Iterator var6 = files.iterator();
 
-            while(var6.hasNext()) {
-                File toZip = (File)var6.next();
+            while (var6.hasNext()) {
+                File toZip = (File) var6.next();
                 if (toZip.isFile()) {
                     this.zipFile(toZip, outputStream, rootFrom);
                 } else {
@@ -118,7 +114,7 @@ public class FileZipper {
 
             ZipInputStream zipIn = new ZipInputStream(new FileInputStream(this.zipFile));
 
-            for(ZipEntry entry = zipIn.getNextEntry(); entry != null; entry = zipIn.getNextEntry()) {
+            for (ZipEntry entry = zipIn.getNextEntry(); entry != null; entry = zipIn.getNextEntry()) {
                 String filePath = destDirectory + File.separator + entry.getName();
                 if (!entry.isDirectory()) {
                     this.extractFile(zipIn, filePath);

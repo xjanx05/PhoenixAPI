@@ -15,4 +15,5 @@ public class PlayerUtils {
         out.writeUTF(server.toLowerCase());
         player.sendPluginMessage(plugin, "BungeeCord", out.toByteArray());
     }
+
 }

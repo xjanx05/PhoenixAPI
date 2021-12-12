@@ -23,7 +23,7 @@ public class ItemBuilder {
     private ItemStack pre;
     private Material material;
     private Color armorColor;
-    private Set<ItemFlag> flags = new HashSet<>();
+    private final Set<ItemFlag> flags = new HashSet<>();
 
     private boolean unbreakable;
 
@@ -68,7 +68,7 @@ public class ItemBuilder {
 
             while (var3.hasNext()) {
                 Enchantment ent = (Enchantment) var3.next();
-                stackMeta.addEnchant(ent, (Integer) this.enchantments.get(ent), true);
+                stackMeta.addEnchant(ent, this.enchantments.get(ent), true);
             }
         }
 
@@ -110,7 +110,7 @@ public class ItemBuilder {
 
                 while (var3.hasNext()) {
                     Enchantment ent = (Enchantment) var3.next();
-                    stackMeta.addEnchant(ent, (Integer) this.enchantments.get(ent), true);
+                    stackMeta.addEnchant(ent, this.enchantments.get(ent), true);
                 }
             }
 

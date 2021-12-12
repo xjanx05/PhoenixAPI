@@ -49,6 +49,7 @@ public class NumberUtils {
         return string;
     }
 
+
     public static int roundUp(int num, int divisor) {
         int sign = (num > 0 ? 1 : -1) * (divisor > 0 ? 1 : -1);
         return sign * (Math.abs(num) + Math.abs(divisor) - 1) / Math.abs(divisor);

@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.UUID;
 
 public class DebugMode implements CommandExecutor {
-    private HashSet<UUID> debugMode = new HashSet<>();
+    private final HashSet<UUID> debugMode = new HashSet<>();
 
 
     public boolean isInDebugMode(UUID uuid) {
@@ -17,9 +17,7 @@ public class DebugMode implements CommandExecutor {
     }
 
     public void setDebugMode(UUID uuid) {
-        if (!debugMode.contains(uuid)) {
-            debugMode.add(uuid);
-        }
+        debugMode.add(uuid);
     }
 
     public void unsetDebug(UUID uuid) {

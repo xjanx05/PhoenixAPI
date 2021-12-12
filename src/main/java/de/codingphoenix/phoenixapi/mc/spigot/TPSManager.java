@@ -21,7 +21,8 @@ public class TPSManager {
 
         return ticks / (elapsed / 1000.0D);
     }
-    public static long getTPSRounded(){
+
+    public static long getTPSRounded() {
         return Math.round(getTPS() * 100) / 100;
     }
 

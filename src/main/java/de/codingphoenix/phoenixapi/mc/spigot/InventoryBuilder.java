@@ -10,7 +10,7 @@ public class InventoryBuilder {
     private int lines;
     private String name;
     private ItemStack fill;
-    private HashMap<Integer, ItemStack> items = new HashMap<>();
+    private final HashMap<Integer, ItemStack> items = new HashMap<>();
     private Inventory inventory;
 
 

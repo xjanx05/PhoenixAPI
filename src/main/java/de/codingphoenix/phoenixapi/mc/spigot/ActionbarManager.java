@@ -53,4 +53,5 @@ public class ActionbarManager {
         String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
         return Class.forName("net.minecraft.server." + version + "." + name);
     }
+
 }
