@@ -34,13 +34,6 @@
                 <configuration>
                     <finalName>PhoenixAPI/PhoenixAPI</finalName>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.zaxxer</groupId>
-                        <artifactId>HikariCP</artifactId>
-                        <version>4.0.3</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
