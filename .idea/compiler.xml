@@ -10,5 +10,8 @@
         <module name="PhoenixAPI" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="phoenixAPI" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
