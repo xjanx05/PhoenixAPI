@@ -114,4 +114,8 @@ public abstract class ScoreboardBuilder {
         }
         this.scoreboard.resetScores(name.getEntryName());
     }
+
+    public Player getPlayer() {
+        return player;
+    }
 }
