@@ -1,4 +1,4 @@
-package de.codingphoenix.phoenixapi.mc.spigot;
+package de.codingphoenix.phoenixapi.minecraft.spigot;
 
 
 import org.bukkit.Color;
@@ -15,6 +15,7 @@ import java.util.*;
 
 
 public class ItemBuilder {
+    private final Set<ItemFlag> flags = new HashSet<>();
     private int amount = 1;
     private String displayName;
     private List<String> lore;
@@ -23,8 +24,6 @@ public class ItemBuilder {
     private ItemStack pre;
     private Material material;
     private Color armorColor;
-    private final Set<ItemFlag> flags = new HashSet<>();
-
     private boolean unbreakable;
 
     public ItemBuilder() {

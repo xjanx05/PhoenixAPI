@@ -1,4 +1,4 @@
-package de.codingphoenix.phoenixapi.mc.spigot.scoreboard;
+package de.codingphoenix.phoenixapi.minecraft.spigot.scoreboard;
 
 import org.bukkit.ChatColor;
 
@@ -20,8 +20,8 @@ public enum EntryName {
     ENTRY_14(14, ChatColor.BLACK.toString()),
     ENTRY_15(15, ChatColor.WHITE.toString());
 
-    private int entry;
-    private String entryName;
+    private final int entry;
+    private final String entryName;
 
     EntryName(final int entry, final String entryName) {
         this.entry = entry;

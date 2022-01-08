@@ -1,4 +1,4 @@
-package de.codingphoenix.phoenixapi.mc.spigot;
+package de.codingphoenix.phoenixapi.minecraft.spigot;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,6 +12,9 @@ import java.util.UUID;
 
 public class SpigotTitle {
     private static final Map<Class<?>, Class<?>> CORRESPONDING_TYPES = new HashMap<Class<?>, Class<?>>();
+    private final HashMap<UUID, Integer> timerIDS = new HashMap<>();
+    private final HashMap<UUID, Integer> steps = new HashMap<>();
+    private final HashMap<UUID, Boolean> reves = new HashMap<>();
     private Class<?> packetTitle;
     private Class<?> packetActions;
     private Class<?> nmsChatSerializer;
@@ -24,9 +27,6 @@ public class SpigotTitle {
     private int stayTime = -1;
     private int fadeOutTime = -1;
     private boolean ticks = false;
-    private final HashMap<UUID, Integer> timerIDS = new HashMap<>();
-    private final HashMap<UUID, Integer> steps = new HashMap<>();
-    private final HashMap<UUID, Boolean> reves = new HashMap<>();
 
     public SpigotTitle(String title) {
         this.title = title;

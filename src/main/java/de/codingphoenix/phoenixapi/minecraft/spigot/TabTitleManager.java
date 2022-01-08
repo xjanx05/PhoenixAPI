@@ -1,4 +1,4 @@
-package de.codingphoenix.phoenixapi.mc.spigot;
+package de.codingphoenix.phoenixapi.minecraft.spigot;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -23,7 +23,7 @@ public class TabTitleManager {
         try {
             Object tabHeader = NMSClassHelper.getClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, "{\"text\":\"" + header + "\"}");
             Object tabFooter = NMSClassHelper.getClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, "{\"text\":\"" + footer + "\"}");
-            Constructor<?> titleConstructor = NMSClassHelper.getClass("PacketPlayOutPlayerListHeaderFooter").getConstructor(new Class[0]);
+            Constructor<?> titleConstructor = NMSClassHelper.getClass("PacketPlayOutPlayerListHeaderFooter").getConstructor();
             Object packet = titleConstructor.newInstance();
             try {
                 Field aField = packet.getClass().getDeclaredField("a");

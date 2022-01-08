@@ -1,6 +1,6 @@
-package de.codingphoenix.phoenixapi.mc.spigot.scoreboard;
+package de.codingphoenix.phoenixapi.minecraft.spigot.scoreboard;
 
-import de.codingphoenix.phoenixapi.mc.spigot.VersionHelper;
+import de.codingphoenix.phoenixapi.minecraft.spigot.VersionHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;

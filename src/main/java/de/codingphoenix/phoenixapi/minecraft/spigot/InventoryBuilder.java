@@ -1,4 +1,4 @@
-package de.codingphoenix.phoenixapi.mc.spigot;
+package de.codingphoenix.phoenixapi.minecraft.spigot;
 
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
@@ -7,10 +7,10 @@ import org.bukkit.inventory.ItemStack;
 import java.util.HashMap;
 
 public class InventoryBuilder {
+    private final HashMap<Integer, ItemStack> items = new HashMap<>();
     private int lines;
     private String name;
     private ItemStack fill;
-    private final HashMap<Integer, ItemStack> items = new HashMap<>();
     private Inventory inventory;
 
 

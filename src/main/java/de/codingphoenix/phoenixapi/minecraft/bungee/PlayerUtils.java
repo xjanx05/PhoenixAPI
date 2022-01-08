@@ -1,4 +1,4 @@
-package de.codingphoenix.phoenixapi.mc.bungee;
+package de.codingphoenix.phoenixapi.minecraft.bungee;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;

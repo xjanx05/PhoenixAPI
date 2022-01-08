@@ -1,4 +1,4 @@
-package de.codingphoenix.phoenixapi.mc.spigot;
+package de.codingphoenix.phoenixapi.minecraft.spigot;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

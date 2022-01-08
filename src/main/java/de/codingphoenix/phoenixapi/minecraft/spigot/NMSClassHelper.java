@@ -1,4 +1,4 @@
-package de.codingphoenix.phoenixapi.mc.spigot;
+package de.codingphoenix.phoenixapi.minecraft.spigot;
 
 import org.bukkit.Bukkit;
 
@@ -62,6 +62,7 @@ public class NMSClassHelper {
         }
         return classes.toArray(new Class[classes.size()]);
     }
+
     /**
      * Recursive method used to find all classes in a given directory and subdirs.
      *

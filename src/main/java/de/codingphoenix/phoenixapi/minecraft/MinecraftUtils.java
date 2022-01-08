@@ -1,4 +1,4 @@
-package de.codingphoenix.phoenixapi.mc;
+package de.codingphoenix.phoenixapi.minecraft;
 
 import java.util.UUID;
 
