@@ -21,9 +21,9 @@ public class TabTitleManager {
             footer = "";
         }
         try {
-            Object tabHeader = BukkitUtils.getClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, "{\"text\":\"" + header + "\"}");
-            Object tabFooter = BukkitUtils.getClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, "{\"text\":\"" + footer + "\"}");
-            Constructor<?> titleConstructor = BukkitUtils.getClass("PacketPlayOutPlayerListHeaderFooter").getConstructor(new Class[0]);
+            Object tabHeader = NMSClassHelper.getClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, "{\"text\":\"" + header + "\"}");
+            Object tabFooter = NMSClassHelper.getClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, "{\"text\":\"" + footer + "\"}");
+            Constructor<?> titleConstructor = NMSClassHelper.getClass("PacketPlayOutPlayerListHeaderFooter").getConstructor(new Class[0]);
             Object packet = titleConstructor.newInstance();
             try {
                 Field aField = packet.getClass().getDeclaredField("a");
@@ -43,7 +43,7 @@ public class TabTitleManager {
             try {
                 Object handle = p.getClass().getMethod("getHandle", new Class[0]).invoke(p);
                 Object playerConnection = handle.getClass().getField("playerConnection").get(handle);
-                playerConnection.getClass().getMethod("sendPacket", BukkitUtils.getClass("Packet")).invoke(playerConnection, packet);
+                playerConnection.getClass().getMethod("sendPacket", NMSClassHelper.getClass("Packet")).invoke(playerConnection, packet);
             } catch (Exception e) {
                 e.printStackTrace();
             }
