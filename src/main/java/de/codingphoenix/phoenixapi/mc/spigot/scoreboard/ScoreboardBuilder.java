@@ -41,8 +41,8 @@ public abstract class ScoreboardBuilder {
         if (team == null) {
             return;
         }
-        if (content.getBytes().length > 16) {
-            content = content.substring(0, content.getBytes().length - 16);
+        if (content.length() > 16) {
+            content = content.substring(0, 16);
         }
         team.setPrefix(content);
         this.showScore(score);
@@ -54,11 +54,11 @@ public abstract class ScoreboardBuilder {
             return;
         }
         if (!VersionHelper.getServerVersion().equals(VersionHelper.Version.UPPER17)) {
-            if (prefix.getBytes().length > 16) {
-                prefix = prefix.substring(0, prefix.getBytes().length - 16);
+            if (prefix.length() > 16) {
+                prefix = prefix.substring(0, 16);
             }
-            if (suffix.getBytes().length > 16) {
-                suffix = suffix.substring(0, suffix.getBytes().length - 16);
+            if (suffix.length() > 16) {
+                suffix = suffix.substring(0, 16);
             }
         }
         team.setPrefix(prefix);
