@@ -1,19 +1,14 @@
 package de.codingphoenix.phoenixapi.other;
 
-import org.bukkit.util.io.BukkitObjectInputStream;
-import org.bukkit.util.io.BukkitObjectOutputStream;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.Serializable;
+import java.io.*;
 
 public class Base64 {
     public static Object[] objectsArrayFromBase64(String data) throws IOException {
         try {
             ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(data));
-            BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
+            ObjectInputStream dataInput = new ObjectInputStream(inputStream);
             Object[] objects = new Object[dataInput.readInt()];
 
             for (int i = 0; i < objects.length; i++) {
@@ -33,7 +28,7 @@ public class Base64 {
         }
         try {
             ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(data));
-            BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
+            ObjectInputStream dataInput = new ObjectInputStream(inputStream);
             Object object = dataInput.readObject();
             dataInput.close();
             return object;
@@ -45,7 +40,7 @@ public class Base64 {
     public static String objectsArrayToBase64(Object[] object) throws IllegalStateException {
         try {
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            BukkitObjectOutputStream dataOutput = new BukkitObjectOutputStream(outputStream);
+            ObjectOutputStream dataOutput = new ObjectOutputStream(outputStream);
 
             dataOutput.writeInt(object.length);
 
@@ -66,7 +61,7 @@ public class Base64 {
         }
         try {
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            BukkitObjectOutputStream dataOutput = new BukkitObjectOutputStream(outputStream);
+            ObjectOutputStream dataOutput = new ObjectOutputStream(outputStream);
             dataOutput.writeObject(object);
             dataOutput.close();
             return Base64Coder.encodeLines(outputStream.toByteArray());
