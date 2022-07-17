@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="PhoenixAPI">
-    <output-path>$PROJECT_DIR$/out/artifacts/PhoenixAPI</output-path>
-    <root id="archive" name="PhoenixAPI.jar">
-      <element id="module-output" name="PhoenixAPI" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../../javaLibaries/HikariCP-4.0.3.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
