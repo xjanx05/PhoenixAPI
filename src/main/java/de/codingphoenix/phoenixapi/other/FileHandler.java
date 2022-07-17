@@ -4,7 +4,7 @@ import java.io.File;
 import java.net.URLDecoder;
 import java.security.CodeSource;
 
-public class FileManager {
+public class FileHandler {
     public static String getJarContainingFolder(Class aclass) throws Exception {
         CodeSource codeSource = aclass.getProtectionDomain().getCodeSource();
 

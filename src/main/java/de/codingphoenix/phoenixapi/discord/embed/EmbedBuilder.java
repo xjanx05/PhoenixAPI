@@ -1,20 +1,34 @@
-package de.codingphoenix.phoenixapi.discord;
+package de.codingphoenix.phoenixapi.discord.embed;
 
+import lombok.Getter;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 
 import java.awt.*;
+import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 
 public class EmbedBuilder {
-    private String title;
-    private Color color;
-    private String description;
-    private String thumbnail;
-    private String author;
-    private String image;
-    private String footerImage;
-    private String footer;
     private final ArrayList<MessageEmbed.Field> fields = new ArrayList<>();
+    @Getter
+    private String title;
+    @Getter
+    private Color color;
+    @Getter
+    private String description;
+    @Getter
+    private String thumbnail;
+    @Getter
+    private String author;
+    @Getter
+    private String authorlink;
+    @Getter
+    private String image;
+    @Getter
+    private String footerImage;
+    @Getter
+    private String footer;
+    @Getter
+    private TemporalAccessor timestamp;
 
     public static EmbedBuilder getEmbedBuilderByEmbed(MessageEmbed embed) {
         EmbedBuilder embedBuilder = new EmbedBuilder();
@@ -51,7 +65,11 @@ public class EmbedBuilder {
             eb.setThumbnail(thumbnail);
         }
         if (author != null) {
-            eb.setAuthor(author);
+            if (authorlink != null) {
+                eb.setAuthor(author, authorlink);
+            } else {
+                eb.setAuthor(author);
+            }
         }
         if (image != null) {
             eb.setImage(image);
@@ -66,14 +84,28 @@ public class EmbedBuilder {
         if (description != null) {
             eb.setDescription(description);
         }
+        if (timestamp != null) {
+            eb.setTimestamp(timestamp);
+        }
         for (MessageEmbed.Field field : fields) {
             eb.addField(field);
         }
         return eb.build();
     }
 
-    public String getTitle() {
-        return title;
+    public EmbedBuilder addField(MessageEmbed.Field field) {
+        fields.add(field);
+        return this;
+    }
+
+    public EmbedBuilder addClearField(boolean inline) {
+        addField(new MessageEmbed.Field("\u200b", "\u200b", inline));
+        return this;
+    }
+
+    public EmbedBuilder setTimestamp(TemporalAccessor timestamp) {
+        this.timestamp = timestamp;
+        return this;
     }
 
     public EmbedBuilder setTitle(String title) {
@@ -81,17 +113,9 @@ public class EmbedBuilder {
         return this;
     }
 
-    public Color getColor() {
-        return color;
-    }
-
     public EmbedBuilder setColor(Color color) {
         this.color = color;
         return this;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public EmbedBuilder setDescription(String description) {
@@ -99,8 +123,9 @@ public class EmbedBuilder {
         return this;
     }
 
-    public String getThumbnail() {
-        return thumbnail;
+    public EmbedBuilder setFooterImage(String footerImage) {
+        this.footerImage = footerImage;
+        return this;
     }
 
     public EmbedBuilder setThumbnail(String thumbnail) {
@@ -108,17 +133,15 @@ public class EmbedBuilder {
         return this;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
     public EmbedBuilder setAuthor(String author) {
         this.author = author;
         return this;
     }
 
-    public String getImage() {
-        return image;
+    public EmbedBuilder setAuthor(String author, String link) {
+        this.author = author;
+        this.authorlink = link;
+        return this;
     }
 
     public EmbedBuilder setImage(String image) {
@@ -126,30 +149,8 @@ public class EmbedBuilder {
         return this;
     }
 
-    public String getFooter() {
-        return footer;
-    }
-
     public EmbedBuilder setFooter(String footer) {
         this.footer = footer;
-        return this;
-    }
-
-    public String getFooterImage() {
-        return footerImage;
-    }
-
-    public EmbedBuilder setFooterImage(String footerImage) {
-        this.footerImage = footerImage;
-        return this;
-    }
-
-    public ArrayList<MessageEmbed.Field> getFields() {
-        return fields;
-    }
-
-    public EmbedBuilder addField(MessageEmbed.Field field) {
-        fields.add(field);
         return this;
     }
 }
